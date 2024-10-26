@@ -45,7 +45,7 @@ const SignUpScreen = () => {
         <Text style={styles.link}>Terms of Service</Text> and{' '}
         <Text style={styles.link}>Privacy Policy</Text>, including{' '}
         <Text style={styles.link}>Cookie Use</Text>.
-      </Text>
+      </Text> 
     </View>
   );
 };
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     borderColor: '#b5b5b5',
     borderWidth: 1,
     marginBottom: 10,
-  }, googleicon: {
+  },
+   googleicon: {
     width: 30,
     height: 30,
     marginRight: 10,
@@ -160,6 +161,7 @@ const styles = StyleSheet.create({
   },
   link: {
     color: '#3B82F6',
+    textDecorationLine: 'underline',
   },
 });
 

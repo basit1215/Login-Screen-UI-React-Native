@@ -261,52 +261,57 @@
 
 
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image, SafeAreaView, StatusBar, } from 'react-native';
 import { AntDesign, FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 
 const SignInScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Sign in</Text>
-      <Text style={styles.subtitle}>
-        New user? <Link href={'/signup'} style={styles.link}>Create an account</Link>
-      </Text>
-      <TextInput style={styles.input} placeholder="Email address" />
-      <TouchableOpacity style={styles.continueButton}>
-        <Text style={styles.continueText}>Continue</Text>
-      </TouchableOpacity>
+    <SafeAreaView style={{
+      flex: 1,
+    }}>
+      <StatusBar barStyle='dark-content'  />
+      <View style={styles.container}>
+        <Text style={styles.title}>Sign in</Text>
+        <Text style={styles.subtitle}>
+          New user? <Link href={'/signup'} style={styles.link}>Create an account</Link>
+        </Text>
+        <TextInput style={styles.input} placeholder="Email address" />
+        <TouchableOpacity style={styles.continueButton}>
+          <Text style={styles.continueText}>Continue</Text>
+        </TouchableOpacity>
 
-      <View style={styles.dividerContainer}>
-        <View style={styles.divider} />
-        <Text style={styles.orText}>or</Text>
-        <View style={styles.divider} />
+        <View style={styles.dividerContainer}>
+          <View style={styles.divider} />
+          <Text style={styles.orText}>or</Text>
+          <View style={styles.divider} />
+        </View>
+
+        <TouchableOpacity style={styles.socialButton}>
+          <Image
+            source={require('../assets/images/gooogle.jpeg')} // Replace with your image path
+            style={styles.googleicon}
+          />
+          <Text style={styles.socialText}>Continue with Google</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.socialButton}>
+          <Image
+            source={require('../assets/images/facebook.png')} // Replace with your image path
+            style={styles.fbicon}
+          />
+          <Text style={styles.socialText}>Continue with Facebook</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.socialButton}>
+          <Image
+            source={require('../assets/images/apple9.png')} // Replace with your image path
+            style={styles.appleicon}
+          />
+          <Text style={styles.socialText}>Continue with Apple</Text>
+        </TouchableOpacity>
       </View>
-
-      <TouchableOpacity style={styles.socialButton}>
-        <Image
-          source={require('../assets/images/gooogle.jpeg')} // Replace with your image path
-          style={styles.googleicon}
-        />
-        <Text style={styles.socialText}>Continue with Google</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.socialButton}>
-        <Image
-          source={require('../assets/images/facebook.png')} // Replace with your image path
-          style={styles.fbicon}
-        />
-        <Text style={styles.socialText}>Continue with Facebook</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.socialButton}>
-        <Image
-          source={require('../assets/images/apple9.png')} // Replace with your image path
-          style={styles.appleicon}
-        />
-        <Text style={styles.socialText}>Continue with Apple</Text>
-      </TouchableOpacity>
-    </View>
+    </SafeAreaView>
   );
 };
 
